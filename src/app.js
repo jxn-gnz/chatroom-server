@@ -7,7 +7,6 @@ function bootstrap() {
   const app = createApp(middlewares)
 
   creatRouter(app)
-
   createSocket(app)
 }
 
