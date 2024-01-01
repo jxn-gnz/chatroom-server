@@ -13,5 +13,7 @@ RUN npm install
 # Copy all the files from the current directory to the working directory in the container
 COPY . .
 
+EXPOSE 3000
+
 # Command to run the Express server
 CMD ["node", "src/app.js"]
