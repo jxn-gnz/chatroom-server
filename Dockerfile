@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Command to run the Express server
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]

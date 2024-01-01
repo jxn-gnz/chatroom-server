@@ -5,8 +5,7 @@
   "main": "./src/app.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development npx nodemon ./src/app.js",
-    "production": "cross-env NODE_ENV=production node ./src/app.js"
+    "dev": "cross-env NODE_ENV=development npx nodemon ./src/app.js"
   },
   "author": "hwx",
   "license": "ISC",
