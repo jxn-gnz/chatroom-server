@@ -9,9 +9,10 @@ function creatRouter(app) {
   fs.readdirSync(moduleDir).forEach(file => {
     if (file !== excludeFileName){
       const modulePath = path.join(moduleDir, file);
-      const { useRouter } = require(modulePath);
+      const { useRouter, health } = require(modulePath);
       // 处理导入的模块
       useRouter(app)
+      health(app)
     }
   });
 }
