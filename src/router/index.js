@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const moduleDir = path.join(__dirname, '.');
-const excludeFileName = 'index.js';
+const excludeFileName = 'app.js';
 
 function creatRouter(app) {
   // 遍历并导入所有模块
