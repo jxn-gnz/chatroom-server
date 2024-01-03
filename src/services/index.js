@@ -1,15 +1,17 @@
-const express = require('express');
+const express = require("express");
+const path = require('path');
 
-const PORT = 3000;
+const PORT = 5000;
 function createApp(middlewares) {
   const app = express();
-  middlewares.forEach(use => {
-    use(app)
+  app.use(express.static(path.join(__dirname, 'public')));
+  middlewares.forEach((use) => {
+    use(app);
   });
-  return app
+  return app;
 }
 
 module.exports = {
   createApp,
-  PORT
+  PORT,
 };
