@@ -1,28 +1,35 @@
-const { rooms } = require('../../config/database');
+const { rooms } = require("../../config/database");
 
 // 使用路由
 function useRouter(app) {
-  app.get('/checkUsername', (req, res) => {
+  app.get("/checkUsername", (req, res) => {
     const { username, roomname } = req.query;
     const room = rooms[roomname];
     if (!room) {
       res.status(200).json({ success: true, isRepeat: false });
-      return
+      return;
     }
-    const isRepeat = Object.keys(room).some(id => {
-      return room[id].username === username
-    })
+    const isRepeat = Object.keys(room).some((id) => {
+      return room[id].username === username;
+    });
     res.status(200).json({ success: true, isRepeat });
-  })
+  });
 }
 
 function health(app) {
-  app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'up' });
-  })
+  app.get("/health", (req, res) => {
+    res.status(200).json({ status: "up" });
+  });
+}
+
+function getRooms(app) {
+  app.get("/rooms", (req, res) => {
+    res.status(200).json({ rooms });
+  });
 }
 
 module.exports = {
   useRouter,
-  health
+  health,
+  getRooms,
 };
