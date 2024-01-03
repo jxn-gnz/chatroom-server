@@ -13,8 +13,5 @@ RUN npm install
 # Copy all the files from the current directory to the working directory in the container
 COPY . .
 
-# Expose the port the app runs in
-EXPOSE 5000
-
 # Command to run the Express server
 CMD ["node", "src/app.js"]
