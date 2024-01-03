@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port the app runs in
-# EXPOSE 5000
+EXPOSE 5000
 
 # Command to run the Express server
 CMD ["node", "src/app.js"]
